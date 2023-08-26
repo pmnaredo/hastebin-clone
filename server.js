@@ -65,4 +65,7 @@ app.get("/:id", async (req, res) => {
 
 app.get("/:id/duplicate");
 
-app.listen(process.env.port || 3000);
+const port = process.env.PORT ?? 8080;
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
+});
